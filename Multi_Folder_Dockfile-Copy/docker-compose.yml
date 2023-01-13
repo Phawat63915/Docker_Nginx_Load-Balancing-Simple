@@ -9,7 +9,7 @@ services:
         buildno: 1
     restart: always
     ports:
-      - "1119:80"
+      - "80:80"
   weba:
     build:
       context: ./weba
