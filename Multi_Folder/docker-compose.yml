@@ -1,0 +1,40 @@
+version: "3.9"
+# compose file for nginx
+services:
+  nginx_main:
+    build:
+      context: ./proxyng
+      dockerfile: Dockerfile
+      args:
+        buildno: 1
+    restart: always
+    ports:
+      - "1119:80"
+  weba:
+    build:
+      context: ./weba
+      dockerfile: a.Dockerfile
+      args:
+        buildno: 1
+    restart: always
+    ports:
+      - "8081:80"
+  webb:
+    build:
+      context: ./webb
+      dockerfile: b.Dockerfile
+      args:
+        buildno: 1
+    restart: always
+    ports:
+      - "8082:80"
+  webc:
+    build:
+      context: ./webc
+      dockerfile: c.Dockerfile
+      args:
+        buildno: 1
+    restart: always
+    ports:
+      - "8083:80"
+
