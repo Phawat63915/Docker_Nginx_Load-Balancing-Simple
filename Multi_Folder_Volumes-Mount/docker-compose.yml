@@ -5,35 +5,27 @@ services:
     build:
       context: ./proxyng
       dockerfile: Dockerfile
-      args:
-        buildno: 1
     restart: always
     ports:
       - "80:80"
   weba:
-    build:
-      context: ./weba
-      dockerfile: a.Dockerfile
-      args:
-        buildno: 1
+    image: nginx
+    volumes:
+      - ./weba/html:/usr/share/nginx/html
     restart: always
     ports:
       - "8081:80"
   webb:
-    build:
-      context: ./webb
-      dockerfile: b.Dockerfile
-      args:
-        buildno: 1
+    image: nginx
+    volumes:
+      - ./webb/html:/usr/share/nginx/html
     restart: always
     ports:
       - "8082:80"
   webc:
-    build:
-      context: ./webc
-      dockerfile: c.Dockerfile
-      args:
-        buildno: 1
+    image: nginx
+    volumes:
+      - ./webc/html:/usr/share/nginx/html
     restart: always
     ports:
       - "8083:80"

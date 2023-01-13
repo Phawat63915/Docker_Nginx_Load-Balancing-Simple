@@ -5,8 +5,6 @@ services:
     build:
       context: ./proxyng
       dockerfile: Dockerfile
-      args:
-        buildno: 1
     restart: always
     ports:
       - "80:80"
@@ -14,8 +12,6 @@ services:
     build:
       context: ./weba
       dockerfile: a.Dockerfile
-      args:
-        buildno: 1
     restart: always
     ports:
       - "8081:80"
@@ -23,8 +19,6 @@ services:
     build:
       context: ./webb
       dockerfile: b.Dockerfile
-      args:
-        buildno: 1
     restart: always
     ports:
       - "8082:80"
@@ -32,8 +26,6 @@ services:
     build:
       context: ./webc
       dockerfile: c.Dockerfile
-      args:
-        buildno: 1
     restart: always
     ports:
       - "8083:80"
